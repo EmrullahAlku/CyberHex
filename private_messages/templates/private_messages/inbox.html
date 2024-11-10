@@ -1,0 +1,6 @@
+<h1>Inbox</h1>
+<ul>
+    {% for message in messages %}
+        <li>{{ message.sender.username }}: {{ message.content }} ({{ message.timestamp }})</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,6 @@
+<h1>Forum Home</h1>
+<ul>
+    {% for topic in topics %}
+        <li><a href="{% url 'topic_detail' topic.id %}">{{ topic.title }}</a></li>
+    {% endfor %}
+</ul>

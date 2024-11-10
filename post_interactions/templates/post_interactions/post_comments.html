@@ -1,0 +1,6 @@
+<h1>Comments for {{ post.topic.title }}</h1>
+<ul>
+    {% for comment in comments %}
+        <li>{{ comment.author.username }}: {{ comment.content }}</li>
+    {% endfor %}
+</ul>
