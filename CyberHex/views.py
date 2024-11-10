@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def indeks(request):
-    return render(request, 'indeks.html')
+def homepage(request):
+    return render(request, 'homepage.html')

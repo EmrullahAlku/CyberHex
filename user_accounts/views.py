@@ -18,5 +18,5 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'user_accounts/register.html', {'form': form})
 
-def index(request):
-    return render(request, 'user_accounts/index.html')
+def accounts_index(request):
+    return render(request, 'user_accounts/accounts_index.html')

@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CyberHex</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <img src="{% static 'images/logo.png' %}" alt="CyberHex Logo" class="logo">
+                <div class="text-container">
+                    <h1>CyberHex</h1>
+                    <p>Information sharing haven for cyber security enthusiasts.</p>
+                </div>
+            </div>
+        </header>        
+        <nav>
+            <ul>
+                <!-- User Accounts -->
+                <li><a href="{% url 'user_accounts:accounts_index' %}">User Accounts</a></li>
+
+                <!-- Discussion Forum -->
+                <li><a href="{% url 'discussion_forum:forum_index' %}">Discussion Forum</a></li>
+
+                <!-- Private Messages -->
+                <li><a href="{% url 'private_messages:messages_index' %}">Private Messages</a></li>
+
+                <!-- Post Interactions -->
+                <li><a href="{% url 'post_interactions:interactions_index' %}">Post Interactions</a></li>
+
+                <!-- Notifications -->
+                <li><a href="{% url 'notifications:notifications_index' %}">Notifications</a></li>
+
+                <!-- User Badges -->
+                <li><a href="{% url 'user_badges:badges_index' %}">User Badges</a></li>
+            </ul>
+        </nav>
+    </body>
+</html>

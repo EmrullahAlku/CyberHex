@@ -7,5 +7,5 @@ def post_comments(request, post_id):
     comments = Comment.objects.filter(post=post)
     return render(request, 'post_interactions/post_comments.html', {'post': post, 'comments': comments})
 
-def index(request):
-    return render(request, 'post_interactions/index.html')
+def interactions_index(request):
+    return render(request, 'post_interactions/interactions_index.html')

@@ -9,5 +9,5 @@ def topic_detail(request, topic_id):
     topic = get_object_or_404(Topic, id=topic_id)
     return render(request, 'discussion_forum/topic_detail.html', {'topic': topic})
 
-def index(request):
-    return render(request, 'discussion_forum/index.html')
+def forum_index(request):
+    return render(request, 'discussion_forum/forum_index.html')
