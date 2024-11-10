@@ -1,6 +1,24 @@
-<h1>Forum Home</h1>
-<ul>
-    {% for topic in topics %}
-        <li><a href="{% url 'topic_detail' topic.id %}">{{ topic.title }}</a></li>
-    {% endfor %}
-</ul>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Forum</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Forum Home</h1>
+        </header>
+
+        <nav>
+            <ul>
+                {% for topic in topics %}
+                    <li><a href="{% url 'topic_detail' topic.id %}">{{ topic.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+
+    </body>
+</html>

@@ -1,6 +1,22 @@
-<h1>Inbox</h1>
-<ul>
-    {% for message in messages %}
-        <li>{{ message.sender.username }}: {{ message.content }} ({{ message.timestamp }})</li>
-    {% endfor %}
-</ul>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Inbox</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Inbox</h1>
+        </header>
+        <nav>
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message.sender.username }}: {{ message.content }} ({{ message.timestamp }})</li>
+                {% endfor %}
+            </ul>      
+        </nav>
+    </body>
+</html>

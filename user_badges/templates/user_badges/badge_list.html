@@ -1,6 +1,22 @@
-<h1>Badges</h1>
-<ul>
-    {% for badge in badges %}
-        <li>{{ badge.name }}: {{ badge.description }}</li>
-    {% endfor %}
-</ul>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Badges</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Badges</h1>
+        </header>
+        <nav>
+            <ul>
+                {% for badge in badges %}
+                    <li>{{ badge.name }}: {{ badge.description }}</li>
+                {% endfor %}
+            </ul>                  
+        </nav>
+    </body>
+</html>

@@ -1,3 +1,22 @@
-<h1>{{ topic.title }}</h1>
-<p>{{ topic.content }}</p>
-<p>Author: {{ topic.author.username }}</p>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Forum</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Discussion Forum</h1>
+        </header>
+
+        <nav>
+            <h1>{{ topic.title }}</h1>
+            <p>{{ topic.content }}</p>
+            <p>Author: {{ topic.author.username }}</p>
+        </nav>
+
+    </body>
+</html>
