@@ -1,20 +1,13 @@
+{% extends 'layout.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Badges</title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
-        <header>
-            <h1>User Badges</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'user_badges:badge_list' %}">View Badges</a></li>
-            </ul>                     
-        </nav>
-    </body>
-</html>
+{% block content %}
+<header>
+    <h1>User Badges</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="{% url 'user_badges:badge_list' %}">View Badges</a></li>
+    </ul>                     
+</nav>
+{% endblock %}

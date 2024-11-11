@@ -1,21 +1,14 @@
+{% extends 'layout.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Messages</title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
-        <header>
-            <h1>Private Messages</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'private_messages:inbox' %}">Inbox</a></li>
-                <li><a href="#">Sent Messages</a></li>
-            </ul>            
-        </nav>
-    </body>
-</html>
+{% block content %}
+<header>
+    <h1>Private Messages</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="{% url 'private_messages:inbox' %}">Inbox</a></li>
+        <li><a href="#">Sent Messages</a></li>
+    </ul>            
+</nav>
+{% endblock %}

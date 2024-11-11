@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Forum</title>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
-        <header>
-            <h1>Discussion Forum</h1>
-        </header>
+{% extends 'layout.html' %}
 
-        <nav>
-            <ul>
-                <li><a href="{% url 'discussion_forum:forum_home' %}">Forum Home</a></li>
-                <li><a href="{% url 'discussion_forum:topic_detail' topic_id=1 %}">Topic 1</a></li>
-                <li><a href="{% url 'discussion_forum:topic_detail' topic_id=2 %}">Topic 2</a></li>
-            </ul>
-        </nav>
+{% block content %}
+<header>
+    <h1>Discussion Forum</h1>
+</header>
 
-    </body>
-</html>
+<nav>
+    <ul>
+        <li><a href="{% url 'discussion_forum:forum_home' %}">Forum Home</a></li>
+        <li><a href="{% url 'discussion_forum:topic_detail' topic_id=1 %}">Topic 1</a></li>
+        <li><a href="{% url 'discussion_forum:topic_detail' topic_id=2 %}">Topic 2</a></li>
+    </ul>
+</nav>
+{% endblock %}

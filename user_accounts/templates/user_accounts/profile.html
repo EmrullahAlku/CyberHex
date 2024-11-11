@@ -1,28 +1,19 @@
+{% extends 'layout.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ user.username }}'s Profile</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
-            <h1>Welcome {{ user.username }}</h1>
-        </div>
-    </header>
-    
-    <section class="profile-container">
-        <div class="profile-card">
-            <h2>Email</h2>
-            <p>{{ user.email }}</p>
-            <h2>Bio</h2>
-            <p>{{ user.bio }}</p>
-        </div>
-    </section>
-</body>
-</html>
+{% block content %}
+
+<div class="header-container">
+    <h1>Welcome {{ user.username }}</h1>
+</div>
+
+<section class="profile-container">
+    <div class="profile-card">
+        <h2>Email</h2>
+        <p>{{ user.email }}</p>
+        <h2>Bio</h2>
+        <p>{{ user.bio }}</p>
+    </div>
+</section>
+{% endblock %}
+

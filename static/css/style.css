@@ -9,7 +9,7 @@ body {
 header {
     background-color: #1e1e1e;
     color: #ffffff;
-    padding: 2em 0;
+    padding: 1em 0;
     text-align: center;
     border-bottom: 2px solid #333;
     display: flex;
@@ -25,8 +25,8 @@ header {
 }
 
 .logo {
-    height: 150px;
-    width: 250px;
+    height: 120px;
+    width: 200px;
     margin-right: 20px;
     mix-blend-mode: multiply;
 }
@@ -107,3 +107,25 @@ nav a:hover {
 nav a:active {
     background-color: hwb(0 0% 30%);
 }
+
+footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 0.25em 0;
+    border-top: 5px solid #333;
+    font-size: 0.75em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  footer a:hover {
+    color: #fff;
+  }

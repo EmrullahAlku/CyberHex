@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Account</title>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
-        <header>
-            <h1>User Accounts</h1>
-        </header>
-        <nav>
-            <ul>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'user_accounts:profile' user_id=user.id %}">Profile</a></li>
-                {% else %}
-                    <li><a href="{% url 'user_accounts:register' %}">Register</a></li>
-                {% endif %}
-            </ul>                      
-        </nav>
-    </body>
-</html>
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<header>
+    <h1>User Accounts</h1>
+</header>
+<nav>
+    <ul>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'user_accounts:profile' user_id=user.id %}">Profile</a></li>
+        {% else %}
+            <li><a href="{% url 'user_accounts:register' %}">Register</a></li>
+        {% endif %}
+    </ul>                      
+</nav>
+{% endblock %}
