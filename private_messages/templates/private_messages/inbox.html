@@ -1,14 +1,36 @@
 {% extends 'layout.html' %}
-
 {% block content %}
-<header>
-    <h1>Inbox</h1>
-</header>
-<nav>
-    <ul>
-        {% for message in messages %}
-            <li>{{ message.sender.username }}: {{ message.content }} ({{ message.timestamp }})</li>
-        {% endfor %}
-    </ul>      
-</nav>
+<section class="messages-container">
+    <div class="messages-card">
+        <div class="sent-messages-section">
+            <h2>Messages</h2>
+            <!-- sent message algorithm will be added here -->
+        </div>
+
+        {% if messages %}
+            <div class="messages-list">
+                {% for message in messages %}
+                    <div class="message-item {% if message.sender == user %}sent{% else %}received{% endif %}">
+                        <div class="message-header">
+                            {% if message.sender == user %}
+                                <span class="message-to">To: {{ message.receiver.username }}</span>
+                            {% else %}
+                                <span class="message-from">From: {{ message.sender.username }}</span>
+                            {% endif %}
+                            <span class="message-time">{{ message.timestamp|date:"M d, Y H:i" }}</span>
+                        </div>
+                        <div class="message-content">
+                            {{ message.content }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-messages">
+                <p>No messages found.</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
 {% endblock %}
