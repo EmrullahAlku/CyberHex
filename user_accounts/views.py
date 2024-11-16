@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
+@login_required  
 def profile(request, user_id):
     user = get_object_or_404(User, id=user_id)
     return render(request, 'user_accounts/profile.html', {'user': user})
