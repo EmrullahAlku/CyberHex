@@ -7,7 +7,7 @@ from django.contrib.auth import login
 @login_required  
 def profile(request, user_id):
     user = get_object_or_404(User, id=user_id)
-    return render(request, 'user_accounts/profile.html', {'user': user})
+    return render(request, 'profile.html', {'user': user})
 
 def register(request):
     if request.method == 'POST':
@@ -18,7 +18,7 @@ def register(request):
             return redirect('profile', user_id=user.id)
     else:
         form = UserCreationForm()
-    return render(request, 'user_accounts/register.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
 
 def accounts_index(request):
-    return render(request, 'user_accounts/accounts_index.html')
+    return render(request, 'accounts_index.html')

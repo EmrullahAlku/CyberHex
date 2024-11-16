@@ -18,9 +18,16 @@
     </head>
     <body>
         <main>
+            {% if user.is_authenticated %}
+                <p> Şuan user olarak giriş yapıldı <p>
+            {% else %}
+                <p>Şuan authenticate değil <a href="/accounts/login"> Giriş yapma sitesi</a></p>            
+            {% endif %} 
+            
             {% block content %}
-            <!-- Sayfaya özgü içerik buraya gelecek -->
+                <!-- Sayfaya özgü içerik buraya gelecek -->
             {% endblock %}
+        
         </main>
         <footer>
             <div class="footer-container">
