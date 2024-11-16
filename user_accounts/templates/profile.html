@@ -4,32 +4,40 @@
 {% block content %}
 <section class="profile-container">
     <div class="profile-card">
-        <img src="{% static 'images/default.jpg' %}" alt="Profile Picture" />
-
-        <table>
-            <tr>
-                <td><strong>Nickname</strong></td>
-                <td>{{ user }}</td>
-            </tr>
-            <tr>
-                <td><strong>First Name</strong></td>
-                <td>{{ profile.firstname }}</td>
-            </tr>
-            <tr>
-                <td><strong>Last Name</strong></td>
-                <td>{{ profile.lastname }}</td>
-            </tr>
-            <tr>
-                <td><strong>Email</strong></td>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <td><strong>Bio</strong></td>
-                <td class="bio-text">{{ profile.bio }}</td>
-            </tr>
-        </table>
+        <div class="profile-info">
+            <img src="{% static 'images/default.jpg' %}" alt="Profile Picture" />
+            <table>
+                <tr>
+                    <td><strong>Nickname</strong></td>
+                    <td>{{ user }}</td>
+                </tr>
+                <tr>
+                    <td><strong>First Name</strong></td>
+                    <td>{{ profile.firstname }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Name</strong></td>
+                    <td>{{ profile.lastname }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Email</strong></td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Bio</strong></td>
+                    <td class="bio-text">{{ profile.bio }}</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="profile-menu">
+            <ul>
+                <li><a href="{% url 'private_messages:messages_index' %}">My Messages</a></li>
+                <li><a href="{% url 'post_interactions:interactions_index' %}">Post Interactions</a></li>
+                <li><a href="{% url 'notifications:notifications_index' %}">My Notifications</a></li>
+                <li><a href="{% url 'user_badges:badges_index' %}">My Badges</a></li>
+            </ul>
+        </div>
     </div>
 </section>
-
-
 {% endblock %}
