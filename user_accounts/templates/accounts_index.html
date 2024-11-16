@@ -7,7 +7,7 @@
         {% if user.is_authenticated %}
             <meta http-equiv="refresh" content="0; url={% url 'user_accounts:profile' user_id=user.id %}" />
         {% else %}
-            <li><a>Login</a></li>
+            <li><a href="{% url 'user_accounts:login'%}">Login</a></li>
             <li><a href="{% url 'user_accounts:register' %}">Register</a></li>
         {% endif %}
     </ul>                   
