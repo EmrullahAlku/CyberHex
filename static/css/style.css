@@ -24,13 +24,6 @@ header {
     text-align: left;
 }
 
-.logo {
-    height: 120px;
-    width: 200px;
-    margin-right: 20px;
-    mix-blend-mode: multiply;
-}
-
 header h1 {
     font-size: 3em;
     margin: 0;
@@ -41,6 +34,14 @@ header p {
     font-size: 1.2em;
     margin-top: 0.5em;
     font-style: italic;
+}
+
+/* Logo */
+.logo {
+    height: 120px;
+    width: 200px;
+    margin-right: 20px;
+    mix-blend-mode: multiply;
 }
 
 .profile-container {
@@ -108,24 +109,114 @@ nav a:active {
     background-color: hwb(0 0% 30%);
 }
 
+/* footer */
+
 footer {
     background-color: #1e1e1e;
     color: #e0e0e0;
     text-align: center;
-    padding: 0.25em 0;
+    padding: 1em 0;
     border-top: 5px solid #333;
-    font-size: 0.75em;
-    position: absolute;
-    bottom: 0;
+    font-size: 0.9em;
     width: 100%;
-  }
-  
-  footer a {
+    margin-top: auto;
+}
+
+footer a {
     color: #e0e0e0;
     text-decoration: none;
     font-weight: bold;
-  }
-  
-  footer a:hover {
+}
+
+footer a:hover {
     color: #fff;
-  }
+}
+ 
+/* topic */
+.topic-details {
+    background-color: #2c2c2c;
+    padding: 2em;
+    border-radius: 8px;
+    margin: 2em auto;
+    width: 80%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.topic-header h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #fff;
+}
+
+.topic-content {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.topic-author {
+    font-size: 1em;
+    color: #888;
+}
+
+.topic-author span {
+    color: #e0e0e0;
+}
+
+/* Posts Section */
+.posts-section {
+    background-color: #2c2c2c;
+    padding: 2em;
+    border-radius: 8px;
+    margin: 2em auto;
+    width: 80%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.posts-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    color: #fff;
+}
+
+.posts-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.post-card {
+    background-color: #333;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.post-header p {
+    margin: 0;
+}
+
+.post-header strong {
+    color: #e0e0e0;
+}
+
+.post-content {
+    font-size: 1em;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.no-posts {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 1em 0;
+}

@@ -5,9 +5,13 @@ def forum_home(request):
     topics = Topic.objects.all()
     return render(request, 'discussion_forum/forum_home.html', {'topics': topics})
 
-def topic_detail(request, topic_id):
-    topic = get_object_or_404(Topic, id=topic_id)
-    return render(request, 'discussion_forum/topic_detail.html', {'topic': topic})
+def topic_detail(request, topic_title):
+    topic = get_object_or_404(Topic, title=topic_title)
+    posts = topic.posts.all()
+    return render(request, 'discussion_forum/topic_detail.html', {
+        'topic': topic,
+        'posts': posts,
+    })
 
 def forum_index(request):
     return render(request, 'discussion_forum/forum_index.html')

@@ -3,12 +3,32 @@
 
 {% block content %}
 <header>
-    <h1>Discussion Forum</h1>
+    <h1>{{ topic.title }}</h1>
 </header>
 
-<nav>
-    <h1>{{ topic.title }}</h1>
-    <p>{{ topic.content }}</p>
-    <p>Author: {{ topic.author.username }}</p>
-</nav>
+<section class="topic-details">
+    <div class="topic-header">
+        <h2>{{ topic.title }}</h2>
+        <p class="topic-content">{{ topic.content }}</p>
+        <p class="topic-author">Author: <span>{{ topic.author.username }}</span></p>
+    </div>
+</section>
+
+<section class="posts-section">
+    <h2>Posts</h2>
+    <ul class="posts-list">
+        {% for post in posts %}
+            <li class="post-card">
+                <div class="post-header">
+                    <p><strong>{{ post.author.username }}</strong></p>
+                    <p><small>Posted on: {{ post.created_at|date:"d M Y H:i" }}</small></p>
+                </div>
+                <p class="post-content">{{ post.content }}</p>
+            </li>
+        {% empty %}
+            <li class="no-posts">No posts available for this topic.</li>
+        {% endfor %}
+    </ul>
+</section>
+
 {% endblock %}
