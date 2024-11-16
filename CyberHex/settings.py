@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     'private_messages',
     'post_interactions',
     'notifications',
-    'user_badges',
     'search',
     'moderation',
 ]

@@ -12,6 +12,10 @@
                     <td>{{ user }}</td>
                 </tr>
                 <tr>
+                    <td><strong>Level</strong></td>
+                    <td>{{ profile.level }}</td>
+                </tr>
+                <tr>
                     <td><strong>First Name</strong></td>
                     <td>{{ profile.firstname }}</td>
                 </tr>
@@ -35,7 +39,6 @@
                 <li><a href="{% url 'private_messages:inbox' %}">My Messages</a></li>
                 <li><a href="{% url 'post_interactions:interactions_index' %}">Post Interactions</a></li>
                 <li><a href="{% url 'notifications:notifications_index' %}">My Notifications</a></li>
-                <li><a href="{% url 'user_badges:badges_index' %}">My Badges</a></li>
             </ul>
         </div>
     </div>

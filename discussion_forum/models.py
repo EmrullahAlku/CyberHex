@@ -26,3 +26,8 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.author.username} - {self.topic.title}"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.author.profile.post_count += 1 
+        self.author.profile.update_level() 

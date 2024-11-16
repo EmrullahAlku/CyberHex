@@ -10,5 +10,4 @@ urlpatterns = [
     path('messages/', include('private_messages.urls')),
     path('interactions/', include('post_interactions.urls')),
     path('notifications/', include('notifications.urls')),
-    path('badges/', include('user_badges.urls')),
 ]
