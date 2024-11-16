@@ -9,11 +9,28 @@
 
 <section class="profile-container">
     <div class="profile-card">
-        <h2>Email</h2>
-        <p>{{ user.email }}</p>
-        <h2>Bio</h2>
-        <p>{{ user.bio }}</p>
+        <img src="{% static 'images/johan.png' %}" alt="Profile Picture" />
+
+        <table>
+            <tr>
+                <td><strong>First Name</strong></td>
+                <td>{{ profile.firstname }}</td>
+            </tr>
+            <tr>
+                <td><strong>Last Name</strong></td>
+                <td>{{ profile.lastname }}</td>
+            </tr>
+            <tr>
+                <td><strong>Email</strong></td>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <td><strong>Bio</strong></td>
+                <td class="bio-text">{{ profile.bio }}</td>
+            </tr>
+        </table>
     </div>
 </section>
-{% endblock %}
 
+
+{% endblock %}

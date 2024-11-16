@@ -44,31 +44,79 @@ header p {
     mix-blend-mode: multiply;
 }
 
+/* Profile Section */
 .profile-container {
     display: flex;
     justify-content: center;
     padding: 3em 0;
+    background-color: #181818;
 }
 
 .profile-card {
     background-color: #2c2c2c;
     color: #fff;
-    padding: 2em;
-    border-radius: 8px;
-    width: 60%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
+    padding: 2.5em;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
 }
 
 .profile-card h2 {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
+    font-size: 1.7em;
+    margin-bottom: 1em;
     font-weight: bold;
+    color: #e0e0e0;
+    text-transform: uppercase;
 }
 
-.profile-card p {
+.profile-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5em;
+}
+
+.profile-card table td {
+    padding: 12px;
+    border-bottom: 1px solid #444;
+}
+
+.profile-card table td:first-child {
+    width: 35%;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.profile-card table td:nth-child(2) {
     font-size: 1.2em;
-    line-height: 1.6;
+    color: #ddd;
+}
+
+.profile-card table tr:last-child td {
+    border-bottom: none;
+}
+
+.profile-card .bio-text {
+    font-size: 1.1em;
+    color: #ddd;
+    line-height: 1.8;
+    margin-top: 1em;
+}
+
+/* Profile Image */
+.profile-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 1em;
+    border: 3px solid #fff;
 }
 
 nav {
