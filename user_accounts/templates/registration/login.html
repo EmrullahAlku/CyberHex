@@ -2,10 +2,13 @@
 {% load static %}
 
 {% block content %}
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form }}
-  <button type="submit">Log In</button>
-</form>
+<div class="login-container">
+    <h3>Log In</h3>
+    <form method="post" class="login-form">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="login-button">Log In</button>
+    </form>
+</div>
 {% endblock %}
+        <li><a href="{% url 'user_accounts:logout' user.id %}">Logout</a></li>

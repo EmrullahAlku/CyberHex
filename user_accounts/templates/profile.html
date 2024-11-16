@@ -2,16 +2,15 @@
 {% load static %}
 
 {% block content %}
-
-<div class="header-container">
-    <h1>Welcome {{ user.username }}</h1>
-</div>
-
 <section class="profile-container">
     <div class="profile-card">
         <img src="{% static 'images/johan.png' %}" alt="Profile Picture" />
 
         <table>
+            <tr>
+                <td><strong>Nickname</strong></td>
+                <td>{{ user }}</td>
+            </tr>
             <tr>
                 <td><strong>First Name</strong></td>
                 <td>{{ profile.firstname }}</td>
@@ -29,7 +28,6 @@
                 <td class="bio-text">{{ profile.bio }}</td>
             </tr>
         </table>
-        <a href="/accounts/login/">logout eklicem</a>
     </div>
 </section>
 

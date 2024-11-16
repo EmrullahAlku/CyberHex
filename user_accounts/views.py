@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
+from django.contrib.auth import login,logout
 
 @login_required  
 def profile(request, user_id):
@@ -22,3 +22,13 @@ def register(request):
 
 def accounts_index(request):
     return render(request, 'accounts_index.html')
+
+def custom_logout(request, user_id):
+    
+    logout(request)
+    return redirect('/')
+
+def custom_login(request, user_id):
+    
+    login(request)
+    return redirect('/')
