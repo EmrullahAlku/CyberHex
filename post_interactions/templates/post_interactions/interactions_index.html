@@ -3,13 +3,20 @@
 
 {% block content %}
 <header>
-    <h1>Post Interactions</h1>
+    <h2>My Posts</h2>
 </header>
 
 <nav>
     <ul>
-        <li><a href="{% url 'post_interactions:post_comments' post_id=1 %}">Post 1 Comments</a></li>
-        <li><a href="{% url 'post_interactions:post_comments' post_id=2 %}">Post 2 Comments</a></li>
+        {% for post in posts %}
+            <li>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.body|truncatechars:200 }}</p>
+                <a href="{% url 'discussion_forum:post_detail' post_id=post.id %}">Read More</a>
+            </li>
+        {% empty %}
+            <li>No posts found.</li>
+        {% endfor %}
     </ul>
 </nav>
 {% endblock %}

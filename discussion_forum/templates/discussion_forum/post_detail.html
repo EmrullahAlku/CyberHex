@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<header>
+    <h2>{{ post.topic.title }} - Post Detail</h2>
+</header>
+
+<div>
+    <h3>{{ post.author.username }}'s Post</h3>
+    <p><strong>Topic:</strong> {{ post.topic.title }}</p>
+    <p><strong>Author:</strong> {{ post.author.username }}</p>
+    <p><strong>Created on:</strong> {{ post.created_at }}</p>
+</div>
+
+<section>
+    <h4>Content:</h4>
+    <p>{{ post.content }}</p>
+</section>
+
+<a href="{% url 'post_interactions:post_list' %}">Back to Posts</a>  <!-- Tüm postlar listesine dönme -->
+{% endblock %}
