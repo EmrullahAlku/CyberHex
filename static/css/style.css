@@ -515,3 +515,55 @@ footer a:hover {
     color: #888;
     font-style: italic;
 }
+
+/* post cards*/
+
+.post-card {
+    background-color: #660d0d;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+details {
+    margin-bottom: 10px; 
+}
+
+summary {
+    font-size: 1.3em; /* Başlık font büyüklüğü */
+    cursor: pointer; /* Başlığa tıklanabilir işareti ekleyin */
+    background-color: #007bff; /* Mavi arka plan */
+    color: gra; /* Beyaz yazı rengi */
+    padding: 10px; /* Başlık etrafında boşluk */
+    border-radius: 4px; /* Yuvarlatılmış köşeler */
+    user-select: none; 
+}
+
+summary:hover {
+    background-color: #0056b3; /* Hover durumunda başlık rengi değişir */
+}
+
+.post-details {
+    background-color: rgb(172, 8, 8); /* İçerik arka planı */
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.post-details p {
+    color: whitesmoke; /* İçerik yazı rengi */
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.post-details a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.post-details a:hover {
+    text-decoration: underline;
+}

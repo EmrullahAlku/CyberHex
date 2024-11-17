@@ -9,10 +9,14 @@
 <nav>
     <ul>
         {% for post in posts %}
-            <li>
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.body|truncatechars:200 }}</p>
-                <a href="{% url 'discussion_forum:post_detail' post_id=post.id %}">Read More</a>
+            <li class="post-card">
+                <details>
+                    <div class="post-details">
+                        <h3>{{ post.topic.title }}</h3> 
+                        <p>{{ post.content|truncatechars:200 }}</p> 
+                        <a href="{% url 'discussion_forum:post_detail' post_id=post.id %}">Read More</a>
+                    </div>
+                </details>
             </li>
         {% empty %}
             <li>No posts found.</li>
