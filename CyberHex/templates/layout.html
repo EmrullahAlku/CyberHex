@@ -19,6 +19,12 @@
                 </div>
                 <nav class="auth-menu">
                     <ul>
+                        <form id="form" role="search">
+                            <input type="search" id="query" name="q"
+                             placeholder="Search..."
+                             aria-label="Search through site content">
+                            <button>Search</button>
+                        </form>
                         {% if user.is_authenticated %}
                         <li><a href="{% url 'user_accounts:profile' user.id %}">My Profile</a></li>
                         <li><a href="{% url 'user_accounts:logout' user.id %}">Logout</a></li>
@@ -33,6 +39,16 @@
     </head>
     <body>
         <main>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'discussion_forum:forum_index' %}">Forum</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">CTF</a></li>
+                    <li><a href="#">Ads</a></li>
+                </ul>
+            </nav>
             {% block content %}
 
 
