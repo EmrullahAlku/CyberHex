@@ -1,14 +1,15 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import User
+from .models import User, UserProfile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from .forms import CustomUserCreationForm
 
-@login_required  
+@login_required
 def profile(request, user_id):
     user = get_object_or_404(User, id=user_id)
-    return render(request, 'profile.html', {'user': user})
+    profile = get_object_or_404(UserProfile, user=user)
+    return render(request, 'profile.html', {'user': user, 'profile': profile})
 
 def register(request):
     if request.method == 'POST':
